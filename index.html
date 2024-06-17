@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Racing | Brick Game</title>
-        <script src="phaser.min.js" charset="utf-8"></script>
-        <script src="main.js" charset="utf-8"></script>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body></body>
+<head>
+    <meta charset="utf-8">
+    <title>90s Race on Solana</title>
+    <script src="phaser.min.js" charset="utf-8"></script>
+    <script src="main.js" charset="utf-8"></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#6d785c">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="first">
+        <span>$90SRACE</span>
+        <h1>90s Race on Solana</h1>
+        <p>Bring back memories by playing this game.</p>
+        <p class="ca">CA: Soon after launch on Pump.Fun<span class="copy-icon"><i class="fas fa-copy"></i></span></p>
+
+        <small>use arrow keys for playing</small>
+
+        <div class="button-group">
+            <a href="" class="vintage-button">Pump.Fun</a>
+            <a href="" class="vintage-button">Telegram</a>
+            <a href="" class="vintage-button">X.COM</a>
+        </div>
+        <div class="copy-success" id="copy-success">CA Copied successfully!</div>
+    </div>
+
+    <script>
+        document.querySelector(".copy-icon").addEventListener("click", function () {
+            var text = document.querySelector(".ca").textContent.trim();
+
+            navigator.clipboard
+                .writeText(text)
+                .then(function () {
+                    var copySuccess = document.getElementById("copy-success");
+                    copySuccess.style.display = "block";
+
+                    setTimeout(function () {
+                        copySuccess.style.display = "none";
+                    }, 2000); // Hide the message after 2 seconds
+                })
+                .catch(function (err) {
+                    console.error("Failed to copy: ", err);
+                });
+        });
+    </script>
+</body>
+
 </html>
